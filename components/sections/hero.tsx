@@ -1,0 +1,117 @@
+import Link from "next/link";
+import { ArrowRight, Sparkles, Compass, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+
+export default function Hero() {
+  return (
+    <section className="relative overflow-hidden pt-16 pb-20 md:pt-24 md:pb-32 bg-gradient-to-b from-emerald-50/40 via-background to-background dark:from-emerald-950/20">
+      {/* Background radial glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:-top-80"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+          className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#10b981] to-[#047857] opacity-20 dark:opacity-30"
+        />
+      </div>
+
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12">
+          {/* Left Hero Text */}
+          <div className="flex flex-col items-start lg:col-span-7">
+            <Badge variant="accent" className="mb-4 gap-1.5 py-1 px-3 text-xs">
+              <Sparkles className="h-3.5 w-3.5 text-primary" />
+              <span>Nouveau site Canoopea en préparation</span>
+            </Badge>
+
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:leading-[1.15]">
+              Recréez les merveilles de la{" "}
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">
+                nature chez vous
+              </span>
+            </h1>
+
+            <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
+              Plongez dans l&apos;univers de l&apos;aquascaping, des terrariums tropicaux
+              et du soin expert pour tous vos animaux de compagnie. Plus de 3 000
+              références haut de gamme sélectionnées par des passionnés.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button size="lg" className="gap-2 shadow-lg shadow-emerald-600/20">
+                Explorer le catalogue
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" size="lg" className="gap-2">
+                <Compass className="h-4 w-4" />
+                Découvrir l&apos;Aquascaping
+              </Button>
+            </div>
+
+            {/* Trust badge row */}
+            <div className="mt-10 flex items-center gap-6 border-t border-border/80 pt-6 text-xs text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="h-4 w-4 text-primary" />
+                <span>Sélection de marques premium</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                <span>Expédition soignée du vivant</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Visual / Magic UI Showcase Placeholder */}
+          <div className="relative lg:col-span-5">
+            <div className="relative mx-auto w-full max-w-lg rounded-2xl border border-emerald-500/20 bg-background/60 p-6 backdrop-blur-xl shadow-2xl">
+              {/* Card Header */}
+              <div className="flex items-center justify-between border-b border-border/60 pb-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-3 w-3 rounded-full bg-red-400" />
+                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
+                  <div className="h-3 w-3 rounded-full bg-emerald-400" />
+                </div>
+                <span className="text-xs font-mono text-muted-foreground">
+                  magic-ui ready
+                </span>
+              </div>
+
+              {/* Showcase preview */}
+              <div className="py-8 text-center space-y-4">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Compass className="h-10 w-10 animate-pulse" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">
+                    Espace Biotopes & Écosystèmes
+                  </h3>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    Prêt pour intégrer les composants animés Magic UI : Border Beam,
+                    Marquee, Orbiting Circles & Animated Grid.
+                  </p>
+                </div>
+                <div className="pt-2 flex justify-center gap-2">
+                  <span className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                    Aquascaping
+                  </span>
+                  <span className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                    Paludariums
+                  </span>
+                  <span className="rounded-md bg-secondary px-2.5 py-1 text-xs font-medium text-secondary-foreground">
+                    Nutrition Animale
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
